@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 abstract class Menu {
-    protected String nombrePlato;
-    protected double valorInicial;
-    protected double valorMenu;
+    public  String nombrePlato;
+    public double valorInicial;
+    public double valorMenu;
 
     public Menu(String nombrePlato, double valorMenu, double valorInicial) {
         this.nombrePlato = nombrePlato;
@@ -19,9 +19,9 @@ abstract class Menu {
 }
 
 class MenuCarta extends Menu {
-    private double valorPorcionGuarnicion;
-    private double valorBebida;
-    private double porcentajeServicio;
+    public double valorPorcionGuarnicion;
+    public double valorBebida;
+    public double porcentajeServicio;
 
     public MenuCarta(String nombrePlato, double valorMenu, double valorInicial, double valorPorcionGuarnicion, double valorBebida, double porcentajeServicio) {
         super(nombrePlato, valorMenu, valorInicial);
@@ -39,8 +39,8 @@ class MenuCarta extends Menu {
     }
 }
 class MenuDia extends Menu {
-    private double valorPostre;
-    private double valorBebida;
+    public double valorPostre;
+    public double valorBebida;
 
     public MenuDia(String nombrePlato, double valorMenu, double valorInicial, double valorPostre, double valorBebida) {
         super(nombrePlato, valorMenu, valorInicial);
@@ -57,8 +57,8 @@ class MenuDia extends Menu {
     }
 }
  class MenuNinos extends Menu {
-    private double valorHelado;
-    private double valorPastel;
+    public double valorHelado;
+    public double valorPastel;
 
     public MenuNinos(String nombrePlato, double valorMenu, double valorInicial, double valorHelado, double valorPastel) {
         super(nombrePlato, valorMenu, valorInicial);
@@ -76,7 +76,7 @@ class MenuDia extends Menu {
 }
 
 class MenuEconomico extends Menu {
-    private double porcentajeDescuento;
+    public double porcentajeDescuento;
 
     public MenuEconomico(String nombrePlato, double valorMenu, double valorInicial, double porcentajeDescuento) {
         super(nombrePlato, valorMenu, valorInicial);
@@ -93,11 +93,11 @@ class MenuEconomico extends Menu {
 }
 
 class Cuenta {
-    private String nombreCliente;
-    private ArrayList<Menu> menu;
-    private double subtotal;
-    private double iva;
-    private double total;
+    public String nombreCliente;
+    public ArrayList<Menu> menu;
+    public double subtotal;
+    public double iva;
+    public double total;
 
     public Cuenta(String nombreCliente) {
         this.nombreCliente = nombreCliente;
