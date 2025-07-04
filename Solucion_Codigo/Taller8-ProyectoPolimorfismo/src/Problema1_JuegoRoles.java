@@ -33,7 +33,10 @@ public class Problema1_JuegoRoles {
     }
 }
 abstract class Personaje {
-    public int vidas, experiencia, batallasGanadas;
+    
+    public int vidas;
+    public int experiencia; 
+    public int batallasGanadas;
 
     public Personaje(int vidas) {
         this.vidas = vidas;
