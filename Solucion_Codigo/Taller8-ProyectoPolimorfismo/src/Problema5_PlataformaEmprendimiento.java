@@ -2,14 +2,14 @@ import java.util.ArrayList;
 
 public class Problema5_PlataformaEmprendimiento {
     public static void main(String[] args) {
-        EmprendimientoTecnologico tech = new EmprendimientoTecnologico("TecLoja",
+        EmprendimientoTecnologico tech = new EmprendimientoTecnologico("TecLoja", 
                 "Carlos Perez", "carlos@mail.com", "Innovar Loja con tecnologia", "IA avanzada", true);
         tech.productos.add("App de comercio local");
         tech.productos.add("Sistema de inventario");
         tech.mentores.add(new Mentor("Ana Torres", "Desarrollo de Software", 5));
 
-        EmprendimientoGastronomico food = new EmprendimientoGastronomico("Sabores Lojanos", 
-                "Mariana Rios", "mariana@mail.com", "Difundir gastronomia local", 10, "Comida tradicional", true, 150);
+        EmprendimientoGastronomico food = new EmprendimientoGastronomico("Sabores Lojanos",
+                "Mariana Rios", "mariana@mail.com", "Difundir gastronomia local", 10, "Comida tradicional", true);
         food.productos.add("Tamales Lojanos");
         food.productos.add("Repe Lojano");
         
@@ -182,14 +182,12 @@ class EmprendimientoGastronomico extends Emprendimiento {
     public int platosMenu;
     public String especialidad;
     public boolean tieneDelivery;
-    public int clientesDiarios;
 
-    public EmprendimientoGastronomico(String nombre, String propietario, String contacto, String mision, int platosMenu, String especialidad, boolean tieneDelivery, int clientesDiarios) {
+    public EmprendimientoGastronomico(String nombre, String propietario, String contacto, String mision, int platosMenu, String especialidad, boolean tieneDelivery) {
         super(nombre, propietario, contacto, mision);
         this.platosMenu = platosMenu;
         this.especialidad = especialidad;
         this.tieneDelivery = tieneDelivery;
-        this.clientesDiarios = clientesDiarios;
     }
 
     @Override
@@ -200,20 +198,20 @@ class EmprendimientoGastronomico extends Emprendimiento {
     @Override
     public void evolucionar() {
         this.prepararMenu();
-        this.clientesDiarios += 50;
     }
 
     public void prepararMenu() {
         this.productos.add("Nuevo plato: " + this.especialidad + " gourmet");
+        this.platosMenu++;
     }
 
     @Override
     public boolean requiereAcompanamiento() {
-        return clientesDiarios < 100;
+        return this.platosMenu < 15;
     }
 
     public String toString() {
         return super.toString() + "\nTipo: Gastronomico | Especialidad: " + especialidad +
-               " | Delivery: " + tieneDelivery + " | Clientes/dia: " + clientesDiarios;
+               " | Delivery: " + tieneDelivery;
     }
 }
