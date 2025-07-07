@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+
 public class Problema3_Futbol {
     public static void main(String[] args) {
         ArrayList<Jugador> equipo = new ArrayList<>();
